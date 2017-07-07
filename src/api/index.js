@@ -1,5 +1,5 @@
 export function createAccount(params) {
-  return fetch("http://localhost:3000/api/v1/accounts", {
+  return fetch("https://glacial-beyond-28619.herokuapp.com/api/v1/accounts", {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -12,7 +12,7 @@ export function createAccount(params) {
 
 export function logIn(params){
   console.log(params)
-  return fetch("http://localhost:3000/api/v1/auth", {
+  return fetch("https://glacial-beyond-28619.herokuapp.com/api/v1/auth", {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -23,14 +23,14 @@ export function logIn(params){
 }
 
 export function fetchUser(id){
-  const url = "http://localhost:3000/api/v1/users/" + id
+  const url = "https://glacial-beyond-28619.herokuapp.com/api/v1/users/" + id
   return fetch(url)
   .then( res => res.json() )
 }
 
 export function editUser(user){
   // console.log(user)
-  const url = "http://localhost:3000/api/v1/users/" + user.id
+  const url = "https://glacial-beyond-28619.herokuapp.com/api/v1/users/" + user.id
   return fetch(url, {
     headers: {
       'Accept': 'application/json',
@@ -43,7 +43,7 @@ export function editUser(user){
 }
 
 export function fetchArticles() {
-  return fetch("http://localhost:3000/api/v1/articles", {
+  return fetch("https://glacial-beyond-28619.herokuapp.com/api/v1/articles", {
     headers: {
       'Authorization': localStorage.getItem('jwt')
     }
@@ -53,7 +53,7 @@ export function fetchArticles() {
 
 export function createArticle(title, body, id){ //needs title
   // console.log('trying to create article from the api/index')
-  return fetch("http://localhost:3000/api/v1/articles", {
+  return fetch("https://glacial-beyond-28619.herokuapp.com/api/v1/articles", {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export function createArticle(title, body, id){ //needs title
 }
 
 export function editArticle(title, body, id ){
-  const url = "http://localhost:3000/api/v1/articles/" + id
+  const url = "https://glacial-beyond-28619.herokuapp.com/api/v1/articles/" + id
   return fetch(url, {
     headers: {
       'Accept': 'application/json',
@@ -78,7 +78,7 @@ export function editArticle(title, body, id ){
 }
 
 export function followUser(id){
-  const url = "http://localhost:3000/api/v1/follow/" + id
+  const url = "https://glacial-beyond-28619.herokuapp.com/api/v1/follow/" + id
   return fetch(url, {
     headers: {
       'Accept': 'application/json',
@@ -90,7 +90,7 @@ export function followUser(id){
 }
 
 export function unfollowUser(id){
-  const url = "http://localhost:3000/api/v1/unfollow/" + id
+  const url = "https://glacial-beyond-28619.herokuapp.com/api/v1/unfollow/" + id
   return fetch(url, {
     headers: {
       'Accept': 'application/json',
@@ -102,7 +102,7 @@ export function unfollowUser(id){
 }
 
 export function deleteArticle(id){
-  return fetch(`http://localhost:3000/api/v1/articles/${id}`, {
+  return fetch(`https://glacial-beyond-28619.herokuapp.com/api/v1/articles/${id}`, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
