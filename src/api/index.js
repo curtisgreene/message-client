@@ -32,7 +32,6 @@ export function fetchUser(id){
 }
 
 export function editUser(user){
-  // console.log(user)
   const url = prodUrl + "api/v1/users/" + user.id
   return fetch(url, {
     headers: {

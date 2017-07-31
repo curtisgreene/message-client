@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   handleSignUp(params) {
-    console.log(params);
     createAccount(params).then(() =>
       this.handleLogIn({
         accountName: params.account.username,
@@ -31,7 +30,6 @@ class App extends Component {
   }
 
   handleLogIn(params) {
-    console.log(params);
     logIn(params)
       .then(res => {
         if (!!res.error) {
