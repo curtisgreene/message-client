@@ -27,7 +27,7 @@ class ArticlesContainer extends React.Component {
 
   handleCreateArticle(title, body, id){
     createArticle(title, body, id)
-    .then( () => this.props.history.push('/articles'))
+    .then( () => this.props.history.push(`/users/${JSON.parse(localStorage.getItem("user")).id}`))
   }
 
   handleEditArticle(title, body, id){
@@ -41,7 +41,6 @@ class ArticlesContainer extends React.Component {
   }
 
   render(){
-    console.log(this.state)
     if (!this.state.articles) {
       return <Loader active inline='centered'/>
     } else {
