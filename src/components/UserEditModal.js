@@ -75,7 +75,6 @@ export default class UserEditModal extends React.Component {
         profile: this.state.profile,
         url: this.state.uploadedFileCloudinaryUrl
       })
-      console.log("sending with url:", this.state)
     } else {
       this.props.handleUpdateUser({
         id: this.state.id,
@@ -86,7 +85,6 @@ export default class UserEditModal extends React.Component {
         username: this.state.username,
         profile: this.state.profile,
       })
-      console.log("sending without url:", this.state)
     }
     this.close();
   }

@@ -14,7 +14,6 @@ export function createAccount(params) {
 
 
 export function logIn(params){
-  console.log(params)
   return fetch(prodUrl + "api/v1/auth", {
     headers: {
       'Accept': 'application/json',
@@ -54,7 +53,6 @@ export function fetchArticles() {
 }
 
 export function createArticle(title, body, id){ //needs title
-  // console.log('trying to create article from the api/index')
   return fetch(prodUrl + "api/v1/articles", {
     headers: {
       'Accept': 'application/json',

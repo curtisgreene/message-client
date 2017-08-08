@@ -28,7 +28,6 @@ export default class ArticleEditForm extends React.Component {
   handleSubmit(){
     const currentUser = JSON.parse(localStorage.getItem('user'))
     const content = this.state.editorState.getCurrentContent();
-    // console.log("here is the content: ", content)
     const raw = JSON.stringify(convertToRaw(content))
     this.props.handleEditArticle( this.state.title, raw, this.props.id )
   }

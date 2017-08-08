@@ -6,15 +6,12 @@ import { Button } from 'semantic-ui-react'
 export default function FollowButton(props){
 
   const handleFollowUser = () => {
-    console.log("triyng to follow")
     followUser(props.user.id) //from api/index
-    // .then( user => console.log(user))
     .then( res => props.handleChange(res) )
 
   }
 
   const handleUnfollowUser = () => {
-    console.log("triyng to unfollow")
     unfollowUser(props.user.id) //from api/index
     .then( user => props.handleChange(user) )
   }

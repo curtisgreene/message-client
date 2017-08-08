@@ -75,9 +75,7 @@ export default class NewArticleForm extends React.Component {
   handleSubmit() {
     const currentUser = JSON.parse(localStorage.getItem("user"));
     const content = this.state.editorState.getCurrentContent();
-    console.log("here is the content: ", content)
     const raw = JSON.stringify(convertToRaw(content));
-    console.log('here is the raw: ', raw)
     this.props.handleCreateArticle(this.state.title, raw, currentUser.id);
   }
 

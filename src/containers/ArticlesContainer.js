@@ -32,7 +32,6 @@ class ArticlesContainer extends React.Component {
 
   handleEditArticle(title, body, id){
     editArticle(title, body, id)
-    .then( res => console.log("response from the server: ", res) )
   }
 
   handleDeleteArticle(id){

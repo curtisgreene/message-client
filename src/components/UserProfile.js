@@ -25,7 +25,6 @@ export default class UserProfile extends React.Component {
 
   componentDidMount() {
     fetchUser(this.props.user_id)
-      // .then( res => console.log(res))
       .then(user => this.setState({ user: user }));
   }
 
