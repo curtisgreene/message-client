@@ -1,10 +1,10 @@
 import React from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { fetchArticles, createArticle, editArticle, deleteArticle } from '../api/index'
-import ArticleShow from '../components/ArticleShow'
-import ArticlesList from '../components/ArticlesList'
-import NewArticleForm from '../components/NewArticleForm'
-import ArticleEditForm from '../components/ArticleEditForm'
+import ArticleShow from '../components/articles/ArticleShow'
+import ArticlesList from '../components/articles/ArticlesList'
+import NewArticleForm from '../components/articles/NewArticleForm'
+import ArticleEditForm from '../components/articles/ArticleEditForm'
 import { Loader } from 'semantic-ui-react'
 
 class ArticlesContainer extends React.Component {

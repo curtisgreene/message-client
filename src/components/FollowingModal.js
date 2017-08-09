@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Popup, Button, Header, Image, Modal, Icon, List } from 'semantic-ui-react'
+import { Button, Image, Modal, Icon, List } from 'semantic-ui-react'
 
 export default class FollowingModal extends React.Component {
   constructor(){

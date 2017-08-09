@@ -2,8 +2,7 @@ import React from "react";
 import { convertFromRaw, createWithContent, EditorState } from "draft-js";
 import { Editor } from "medium-draft";
 import { Link } from "react-router-dom";
-import { Button, Container, Image, Header, Icon } from "semantic-ui-react";
-import ArticleEditForm from "./ArticleEditForm";
+import { Container, Image, Header } from "semantic-ui-react";
 import ArticleEditModal from "./ArticleEditModal";
 
 export default class ArticleShow extends React.Component {

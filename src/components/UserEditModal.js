@@ -1,10 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
-  Popup,
   Button,
   Header,
-  Image,
   Modal,
   Icon,
   Form,
@@ -132,7 +129,7 @@ export default class UserEditModal extends React.Component {
                   ? null
                   : <div>
                       <p>{this.state.uploadedFile.name}</p>
-                      <img src={this.state.uploadedFileCloudinaryUrl} />
+                      <img alt="blog photo" src={this.state.uploadedFileCloudinaryUrl} />
                     </div>}
               </div>
             </Modal.Description>

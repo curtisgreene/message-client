@@ -1,7 +1,6 @@
 import React from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import UserProfile from '../components/UserProfile'
-import { Button } from 'semantic-ui-react'
 import { editUser } from '../api/index'
 
 class UsersContainer extends React.Component {

@@ -2,14 +2,13 @@ import React from "react";
 import FollowersModal from "./FollowersModal";
 import FollowingModal from "./FollowingModal";
 import {
-  Button,
   Item,
   Divider,
   Grid,
   Image,
   Container
 } from "semantic-ui-react";
-import ArticleCard from "./ArticleCard";
+import ArticleCard from "./articles/ArticleCard";
 import UserEditModal from "./UserEditModal";
 
 export default class CurrentUserProfile extends React.Component {

@@ -4,17 +4,15 @@ import FollowersModal from "./FollowersModal";
 import FollowingModal from "./FollowingModal";
 import FollowButton from "./FollowButton";
 import CurrentUserProfile from "./CurrentUserProfile";
+import ArticleCard from "./articles/ArticleCard";
 import {
-  Button,
   Image,
-  Icon,
   Item,
   Loader,
   Divider,
   Grid,
   Container
 } from "semantic-ui-react";
-import ArticleCard from "./ArticleCard";
 export default class UserProfile extends React.Component {
   constructor(props) {
     super(props);

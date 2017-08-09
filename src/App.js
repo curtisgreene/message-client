@@ -4,10 +4,8 @@ import SignUpForm from "./components/SignUpForm";
 import { createAccount, logIn, fetchUser } from "./api/index";
 import ArticlesContainer from "./containers/ArticlesContainer";
 import UsersContainer from "./containers/UsersContainer";
-import CustomImageEditor from "./components/staging/CustomImageEditor";
 import NavBar from "./components/NavBar";
 import LogInForm from "./components/LogInForm";
-import { Container } from "semantic-ui-react";
 import "./App.css";
 class App extends Component {
   constructor() {
@@ -88,7 +86,6 @@ class App extends Component {
             render={() =>
               <UsersContainer currentUser={this.state.currentUser} />}
           />
-          <Route path="/staging" render={() => <CustomImageEditor />} />
         </Switch>
       </div>
     );

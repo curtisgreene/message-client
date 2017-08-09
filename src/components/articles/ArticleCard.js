@@ -1,10 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Item, Image, Card } from 'semantic-ui-react'
-import {convertFromRaw,
-        Editor,
-        EditorState,
-        createWithContent } from 'draft-js'
+import { Item, Image } from 'semantic-ui-react'
+
 
 
 export default class ArticleCard extends React.Component {
@@ -14,7 +11,7 @@ export default class ArticleCard extends React.Component {
     let body = JSON.parse(article.body)
     let foo = body.blocks.filter( (block) => block.data.src )
     if ( foo.length === 0 ) {
-      return require('../assets/missing-image.png')
+      return require('../../assets/missing-image.png')
     } else {
 	    return foo[0].data.src
     }
