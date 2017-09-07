@@ -6,10 +6,9 @@ import {
   Block,
   addNewBlock,
   createEditorState,
-  Editor,
-} from 'medium-draft';
+  Editor
+} from "medium-draft";
 import request from "superagent";
-
 
 const CLOUDINARY_UPLOAD_PRESET = "qzy5cg1b";
 const CLOUDINARY_UPLOAD_URL =
@@ -19,7 +18,7 @@ class CustomImageSideButton extends ImageSideButton {
   onChange(e) {
     const file = e.target.files[0];
 
-    if (file.type.indexOf('image/') === 0) {
+    if (file.type.indexOf("image/") === 0) {
       // This is a post request to server endpoint with image as `image`
       let upload = request
         .post(CLOUDINARY_UPLOAD_URL)
@@ -27,15 +26,14 @@ class CustomImageSideButton extends ImageSideButton {
         .field("file", file);
       upload.end((err, response) => {
         if (response.status === 200) {
-          this.props.setEditorState(addNewBlock(
-            this.props.getEditorState(),
-              Block.IMAGE, {
-                src: response.body.secure_url,
-              }
-            ));
-          }
-        });
-      }
+          this.props.setEditorState(
+            addNewBlock(this.props.getEditorState(), Block.IMAGE, {
+              src: response.body.secure_url
+            })
+          );
+        }
+      });
+    }
     this.props.close();
   }
 }
@@ -50,10 +48,12 @@ export default class NewArticleForm extends React.Component {
     this.onChange = editorState => this.setState({ editorState });
     this.handleKeyCommand = this.handleKeyCommand.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.sideButtons = [{
-      title: 'Image',
-      component: CustomImageSideButton,
-    }];
+    this.sideButtons = [
+      {
+        title: "Image",
+        component: CustomImageSideButton
+      }
+    ];
   }
 
   componentDidMount() {
@@ -76,7 +76,8 @@ export default class NewArticleForm extends React.Component {
     const currentUser = JSON.parse(localStorage.getItem("user"));
     const content = this.state.editorState.getCurrentContent();
     const raw = JSON.stringify(convertToRaw(content));
-    this.props.handleCreateArticle(this.state.title, raw, currentUser.id);
+    if (this.state.title === "")
+      this.props.handleCreateArticle(this.state.title, raw, currentUser.id);
   }
 
   handleChange(prop, value) {
